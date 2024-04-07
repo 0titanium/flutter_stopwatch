@@ -16,6 +16,22 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
       ),
       body: Column(
         children: [
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                '0',
+                style: TextStyle(fontSize: 50),
+              ),
+              Text(
+                '00',
+              ),
+            ],
+          ),
           Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -36,7 +52,9 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );
