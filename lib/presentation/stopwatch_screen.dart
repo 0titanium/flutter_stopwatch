@@ -14,7 +14,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
   int _time = 0;
   bool _isRunning = false;
 
-  List<String> _labTimes = [];
+  final List<String> _labTimes = [];
 
   void _clickButton() {
     _isRunning = !_isRunning;
@@ -46,7 +46,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
   }
 
   void _recordLabTime(String time) {
-    _labTimes.insert(0, '${_labTimes.length+1}등 $_time');
+    _labTimes.insert(0, '${_labTimes.length + 1}등 $time');
   }
 
   @override
@@ -87,15 +87,8 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
             width: 100,
             height: 200,
             child: ListView(
-              children: [
-                Center(child: Text('data')),
-                Text('data'),
-                Text('data'),
-                Text('data'),
-                Text('data'),
-                Text('data'),
-                Text('data'),
-              ],
+              children:
+                  _labTimes.map((time) => Center(child: Text(time))).toList(),
             ),
           ),
           Spacer(),
