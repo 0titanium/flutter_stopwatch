@@ -10,6 +10,33 @@ class StopWatchScreen extends StatefulWidget {
 class _StopWatchScreenState extends State<StopWatchScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('StopWatch'),
+      ),
+      body: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              FloatingActionButton(
+                backgroundColor: Colors.orange,
+                onPressed: () {},
+                child: Icon(Icons.refresh),
+              ),
+              FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.play_arrow),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.green,
+                onPressed: () {},
+                child: Icon(Icons.add),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
