@@ -16,6 +16,20 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
 
   List<String> _labTimes = [];
 
+  void _clickButton() {
+    _isRunning = !_isRunning;
+
+    if (_isRunning) {
+      _start();
+    } else {
+      _pause();
+    }
+  }
+
+  void _start() {}
+
+  void _pause() {}
+
   @override
   void dispose() {
     _timer?.cancel();
@@ -59,7 +73,6 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
                 Text('data'),
                 Text('data'),
                 Text('data'),
-
               ],
             ),
           ),
@@ -73,8 +86,12 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
                 child: Icon(Icons.refresh),
               ),
               FloatingActionButton(
-                onPressed: () {},
-                child: Icon(Icons.play_arrow),
+                onPressed: () {
+                  setState(() {
+                    _clickButton();
+                  });
+                },
+                child: _isRunning ? Icon(Icons.pause) : Icon(Icons.play_arrow),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.green,
