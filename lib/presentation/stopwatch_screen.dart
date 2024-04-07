@@ -37,7 +37,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
             height: 200,
             child: ListView(
               children: [
-                Text('data'),
+                Center(child: Text('data')),
                 Text('data'),
                 Text('data'),
                 Text('data'),
